@@ -1,6 +1,8 @@
 import cProfile, pstats, StringIO
 import func_utils
 import data
+import cpu_props
+import coverage
 
 def wrap(pre, post):
     def decorate(func):
@@ -25,6 +27,12 @@ def calc(x, y):
    return x + y
 
 def add(x, y):
+    if (x > -10):
+        x += 2
+
+    if (y < 0):
+        y -= 2
+
     return x + y
 
 
@@ -32,7 +40,10 @@ def main():
     #print calc(1, 2)
 
     #print_profiling(main.__name__)
-    data.run()
+    #data.run()
+    func_utils.run(add)
+    cpu_props.run()
+    coverage.run(add)
 
 def print_profiling(func):
     pr = cProfile.Profile()

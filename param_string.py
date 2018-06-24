@@ -1,11 +1,10 @@
 import sys
 import random
+from param import Param
 
-class StringParam:
-    regex = "*"
-
-    def __init__(self, regex):
-        self.regex = regex
+class StringParam(Param):
+    def __init__(self, symbol):
+        self.symbol = symbol
 
     def getRegex(self):
         return self.regex
@@ -14,4 +13,4 @@ class StringParam:
         self.regex = regex
 
     def generateParam(self):
-        return random.randint(self.minValue, self.maxValue)
+        return ""

@@ -26,7 +26,7 @@ def argsGeneration(args):
     generators = []
 
     for arg in args:
-        generators.append(param_int.IntParam(arg, -10, 10))
+        generators.append(param_int.IntParam(arg))
 
     return generators
 

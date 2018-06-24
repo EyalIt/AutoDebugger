@@ -1,15 +1,12 @@
 import sys
 import random
+from param import Param
 
-class IntParam:
-    symbol = ''
-    minValue = -sys.maxint - 1
-    maxValue = sys.maxint
-
-    def __init__(self, symbol, minValue, maxValue):
+class IntParam(Param):
+    def __init__(self, symbol):
         self.symbol = symbol
-        self.minValue = minValue
-        self.maxValue = maxValue
+        self.minValue = -sys.maxint - 1
+        self.maxValue = sys.maxint
 
     def getSymbol(self):
         return self.symbol
